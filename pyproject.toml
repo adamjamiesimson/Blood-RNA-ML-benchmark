@@ -1,0 +1,29 @@
+[build-system]
+requires = ["setuptools>=64"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "ms-blood-rna-ml-benchmark"
+version = "1.0.0"
+description = "Benchmark ML models for Multiple Sclerosis classification from whole-blood RNA (GSE17048)."
+readme = "README.md"
+requires-python = ">=3.10"
+license = { file = "LICENSE" }
+authors = [
+    { name = "Adam Simson" },
+    { name = "Ankush Dutta" },
+]
+keywords = ["machine-learning", "bioinformatics", "multiple-sclerosis", "rna", "benchmark"]
+dynamic = ["dependencies"]
+
+[project.urls]
+Repository = "https://github.com/adamjamiesimson/Blood-RNA-ML-benchmark"
+
+[project.scripts]
+msbench = "msbench.cli:main"
+
+[tool.setuptools]
+packages = ["msbench"]
+
+[tool.setuptools.dynamic]
+dependencies = { file = ["requirements.txt"] }
